@@ -3,6 +3,7 @@ import axios from "axios"
 import './officer.css'
 import {Link} from 'react-router-dom'
 
+
 const Officer = () => {
     const deleteOfficer = (oid) =>{
         const PopMessage = window.confirm("Are you sure you want to delete Officer?");
@@ -32,8 +33,10 @@ const Officer = () => {
        }
 }
   return (
+    
     <div>
-
+    <h1>Officer list</h1>
+<div><Link to ={'/Addofficer'}><button> Addofficer</button></Link></div>
     <table className="table">
                 <thead>
                     <tr>
@@ -56,9 +59,6 @@ const Officer = () => {
                                     <td> {data.phone}</td>
 <td>
 <button onClick={()=>deleteOfficer(data.oid)}> DeleteOfficer</button>
-</td>
-<td>
-<Link to ={'/Addofficer'}><button> Addofficer</button></Link>
 </td>
 <td>
 <Link to ={`/UpdateOfficer/${data.oid}`}><button> UpdateOfficer</button></Link>

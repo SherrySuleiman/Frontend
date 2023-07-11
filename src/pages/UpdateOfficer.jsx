@@ -23,7 +23,7 @@ function UpdateOfficer() {
   
     function handleSubmit(event) {
       event.preventDefault();
-      axios.put(`http://localhost:8080/Station/update/${oid}`, data);
+      axios.put(`http://localhost:8080/Officer/update/${oid}`, data);
       navigate("/Officer");
     }
 
@@ -36,11 +36,11 @@ function UpdateOfficer() {
     </div>
     <div class="form-group">
       <label for="address">address</label>
-      <textarea id="address" name="address"  value={data.address} onChange={event => setData({...data,address:event.target.value})} rows="6"></textarea>
+      <input type='text' id="address" name="address"  value={data.address} onChange={event => setData({...data,address:event.target.value})} rows="6"/>
     </div>
     <div class="form-group">
       <label for="phone">phone</label>
-      <textarea id="phone" name="phone"   value={data.phone} onChange={event => setData({...data,phone:event.target.value})}  rows="10"></textarea>
+      <input type='text' id="phone" name="phone"   value={data.phone} onChange={event => setData({...data,phone:event.target.value})}  rows="10"/>
     </div>
     <button type="submit">update</button>
   </form>      
